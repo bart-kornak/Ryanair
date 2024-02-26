@@ -1,0 +1,29 @@
+Title: Verify login requirement during booking process on flight Wroclaw-Paris
+Env: https://www.ryanair.com/ie/en
+
+Prequisities: Cypress installed and configured, user is on home page, user has no account and is not logged in
+
+Reproduction steps:
+Given   User is on home page
+And     User has no account
+When    User accept Cookies
+And     User fulfill start and final destination
+And     User choose depart and return dates with amount of passengers
+And     User clicks Search
+And     User selects both flights by clicking Selects buttons
+And     User selects basic fare
+And     User continues with basic fare
+And     User clicks "Log in later"
+And     User provides his personal data (salutation, first and last name)
+And     User clicks Continue button
+And     User selects recommended seats by clicking "Add recommended seats"
+And     User select Fast Track by clicking "Add fast track" button
+And     User selects 1 small bag by clickin proper radiobutton
+And     User selects 1 additional 20kg bag by clicking incrementation "+" icon 
+And     User clicks Continue button
+And     User clicks Continue button again
+And     User clicks Continue button again
+Then    Pop up with login requirement appears
+And     Pop up includes possibility to proceed with Google/Facebook/Paypal
+And     Under 3 mentioned above buttons there should be 2 inputs dedicated for login
+And     Under login there should be button for users which do not have account (Sign up)
